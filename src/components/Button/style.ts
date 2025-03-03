@@ -11,6 +11,6 @@ export const ButtonPrimary = styled.button<{ isDisabled: boolean }>`
   font-weight: bold;
   cursor: pointer;
   &:hover {
-    opacity: ${({ isDisabled }) => (isDisabled ? '0.2' : '0.8')};
+    opacity: ${({ isDisabled }) => (isDisabled ? '0.2' : '0.4')};
   }
 `
