@@ -1,4 +1,9 @@
 import { api } from './api'
+import {
+  searchParamsTableFipeModelsProps,
+  searchParamsTableFipeResultProps,
+  searchParamsTableFipeYearProps,
+} from '../interfaces/resultCar'
 
 export async function getBrands({ vehicle }: { vehicle: string }) {
   const response = await api.get(`/${vehicle}/marcas`)
@@ -9,10 +14,7 @@ export async function getBrands({ vehicle }: { vehicle: string }) {
 export async function getModelsVehicle({
   vehicle,
   brandCode,
-}: {
-  vehicle: string
-  brandCode: string | number
-}) {
+}: searchParamsTableFipeModelsProps) {
   const response = await api.get(`/${vehicle}/marcas/${brandCode}/modelos`)
   return response.data
 }
@@ -21,11 +23,7 @@ export async function getYearVehicle({
   vehicle,
   brandCode,
   modelsCode,
-}: {
-  vehicle: string
-  brandCode: string | number
-  modelsCode: string | number
-}) {
+}: searchParamsTableFipeYearProps) {
   const response = await api.get(
     `/${vehicle}/marcas/${brandCode}/modelos/${modelsCode}/anos`
   )
@@ -37,12 +35,7 @@ export async function getDataTableFipe({
   brandCode,
   modelsCode,
   yearCode,
-}: {
-  vehicle: string
-  brandCode: string | number
-  modelsCode: string | number
-  yearCode: string
-}) {
+}: searchParamsTableFipeResultProps) {
   const response = await api.get(
     `/${vehicle}/marcas/${brandCode}/modelos/${modelsCode}/anos/${yearCode}`
   )

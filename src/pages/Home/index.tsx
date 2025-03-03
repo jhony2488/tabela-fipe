@@ -97,7 +97,6 @@ function Home() {
       setYearsVehicle([])
       handleGetYears()
     }
-    console.log(model)
   }, [model])
 
   useEffect(() => {
@@ -108,7 +107,6 @@ function Home() {
       setIsDisabled(true)
     }
   }, [yearVehicle])
-
 
   return (
     <>
@@ -140,9 +138,7 @@ function Home() {
               </Select>
             </FormControl>
 
-
             {vehicle && vehicle != "" &&
-
               <FormControl fullWidth style={{ marginBottom: 20 }}>
                 <InputLabel id="demo-simple-select-helper-label">Marca</InputLabel>
                 <Select
@@ -163,8 +159,6 @@ function Home() {
                 </Select>
               </FormControl>
             }
-
-
 
             {brand && brand != "" && <FormControl fullWidth style={{ marginBottom: 20 }}>
               <InputLabel id="demo-simple-select-helper-label">Modelo</InputLabel>
