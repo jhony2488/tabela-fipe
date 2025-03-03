@@ -1,6 +1,11 @@
 import { ButtonPrimary } from "./style"
 
-function ButtonComponent({ children, onClick, isDisabled, ...rest }: { children: React.ReactNode | string; onClick: React.MouseEventHandler<HTMLButtonElement> | undefined; isDisabled: boolean; }) {
+interface ButtonComponentProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode | string;
+    isDisabled: boolean;
+}
+
+function ButtonComponent({ children, onClick, isDisabled, ...rest }: ButtonComponentProps) {
 
     return (
         <>

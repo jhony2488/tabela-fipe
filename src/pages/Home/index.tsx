@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { Title, Description, MainContent } from "./style"
+import { Title, Description, MainContent, ContainerButton } from "./style"
 import { useAppContext } from "../../storage/contextApi"
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -121,7 +122,7 @@ function Home() {
 
         <section>
           <CardForm>
-            <FormControl fullWidth style={{marginBottom: 16}}>
+            <FormControl fullWidth style={{ marginBottom: 20 }}>
               <InputLabel id="demo-simple-select-helper-label">Veículo</InputLabel>
               <Select
                 labelId="demo-simple-select-helper-label"
@@ -142,7 +143,7 @@ function Home() {
 
             {vehicle && vehicle != "" &&
 
-              <FormControl fullWidth style={{marginBottom: 16}}>
+              <FormControl fullWidth style={{ marginBottom: 20 }}>
                 <InputLabel id="demo-simple-select-helper-label">Marca</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -165,7 +166,7 @@ function Home() {
 
 
 
-            {brand && brand != "" && <FormControl fullWidth style={{marginBottom: 16}}>
+            {brand && brand != "" && <FormControl fullWidth style={{ marginBottom: 20 }}>
               <InputLabel id="demo-simple-select-helper-label">Modelo</InputLabel>
               <Select
                 labelId="demo-simple-select-helper-label"
@@ -185,7 +186,7 @@ function Home() {
               </Select>
             </FormControl>}
 
-            {model && model != "" && <FormControl fullWidth style={{marginBottom: 16}}>
+            {model && model != "" && <FormControl fullWidth style={{ marginBottom: 20 }}>
               <InputLabel id="demo-simple-select-helper-label">Ano</InputLabel>
               <Select
                 labelId="demo-simple-select-helper-label"
@@ -204,9 +205,11 @@ function Home() {
                 }
               </Select>
             </FormControl>}
-            <Button isDisabled={isDisabled} onClick={() => handleSubmitGetCar()}>
-              Consultar Preço
-            </Button>
+            <ContainerButton>
+              <Button isDisabled={isDisabled} onClick={() => handleSubmitGetCar()} style={{ width: 250 }}>
+                Consultar Preço
+              </Button>
+            </ContainerButton>
           </CardForm>
         </section>
       </MainContent>

@@ -7,7 +7,7 @@ export const ButtonPrimary = styled.button<{ isDisabled: boolean }>`
     if (isDisabled) {
       return 'gray'
     }
-    return '#993399'
+    return '#5f01ba'
   }};
   color: ${({ isDisabled }) => {
     if (isDisabled) {
@@ -18,11 +18,19 @@ export const ButtonPrimary = styled.button<{ isDisabled: boolean }>`
 
   opacity: ${({ isDisabled }) => {
     if (isDisabled) {
-      return '0.6'
+      return '0.4'
     }
     return '1'
   }};
 
   border: none;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: ${({ isDisabled }) => (isDisabled ? '0.2' : '0.8')}; /* Diminui a opacidade no hover */
+  }
 
 `
