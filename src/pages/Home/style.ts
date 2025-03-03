@@ -20,6 +20,7 @@ export const MainContent = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(246, 246, 246);
 `
 
 export const ContainerButton = styled.main`
